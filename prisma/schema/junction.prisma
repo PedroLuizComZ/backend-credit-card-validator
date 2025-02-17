@@ -1,0 +1,9 @@
+// prisma/junction.prisma
+model QuestionnaireJunction {
+  id              Int           @id @default(autoincrement())
+  questionId      Int
+  questionnaireId Int
+  priority        Int
+  question        Question      @relation(fields: [questionId], references: [id])
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+}

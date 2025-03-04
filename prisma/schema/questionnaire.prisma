@@ -1,9 +1,0 @@
-// prisma/questionnaire.prisma
-model Questionnaire {
-  id                 Int                     @id @default(autoincrement())
-  name               String
-  junctions          QuestionnaireJunction[]
-  userQuestionnaires UserQuestionnaire[]
-
-  Answer Answer[]
-}

@@ -8,11 +8,7 @@ import rateLimiter from "@/common/middleware/rateLimiter";
 import requestLogger from "@/common/middleware/requestLogger";
 import { env } from "@/common/utils/envConfig";
 
-import questionRoutes from "@/modules/question/question.routes";
-import questionnaireJunctionRoutes from "@/modules/questionnaire-junction/questionnaire-junction.routes";
-import questionnaireRoutes from "@/modules/questionnaire/questionnaire.routes";
-import userQuestionnaireRoutes from "@/modules/user-questionnaire/user-questionnaire.routes";
-import userRoutes from "@/modules/user/user.routes";
+import creditCardRoutes from "@/modules/credit-card/credit-card.routes";
 
 const logger = pino({ name: "server start" });
 const app: Express = express();
@@ -30,12 +26,7 @@ app.use(rateLimiter);
 // Request logging
 app.use(requestLogger);
 
-// Routes
-app.use("/api/questionnaire", questionnaireRoutes);
-app.use("/api/question", questionRoutes);
-app.use("/api/questionnaire-junction", questionnaireJunctionRoutes);
-app.use("/api/user", userRoutes);
-app.use("/api/user-questionnaire", userQuestionnaireRoutes);
+app.use("/api/credit-card", creditCardRoutes);
 
 // Error handlers
 app.use(errorHandler());

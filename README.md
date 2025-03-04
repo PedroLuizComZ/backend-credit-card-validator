@@ -1,6 +1,6 @@
-# Backend - Questionnaire Management System
+# Backend - Credit Card Validator
 
-This is the backend for a questionnaire management system built with Node.js, Express, and Prisma. It provides RESTful APIs for user authentication, questionnaire management, and user responses.
+This is the backend for a credit card validation system built with **Node.js**, **Express**, and **Joi**. It provides a RESTful API for validating credit card details, including card number, cardholder name, expiry date, and CVV.
 
 ---
 
@@ -8,22 +8,17 @@ This is the backend for a questionnaire management system built with Node.js, Ex
 
 - **Node.js**: JavaScript runtime environment.
 - **Express**: Framework for building RESTful APIs.
-- **Prisma**: ORM for database interaction.
-- **JWT (JSON Web Tokens)**: User authentication.
-- **Bcrypt**: Password hashing.
+- **Joi**: Schema validation library for request payloads.
 - **Vitest**: Unit and integration testing framework.
 - **Supertest**: HTTP route testing library.
-- **PostgreSQL**: Relational database.
 - **Docker**: Containerization for easy deployment.
 
 ---
 
 ## **Project Structure**
+
 ```
 backend/
-├── prisma/
-│   ├── schema.prisma    # Database schema
-│   └── migrations/      # Database migrations
 ├── src/
 │   ├── modules/         # Feature modules (e.g., user, questionnaire)
 │   ├── common/          # Shared utilities and middleware
@@ -45,8 +40,8 @@ Follow these steps to set up and run the backend project.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/backend.git
-   cd backend
+   git clone https://github.com/PedroLuizComZ/credit-card-validator.git
+   cd credit-card-validator
    ```
 2. Install dependencies:
    ```bash
@@ -58,15 +53,6 @@ Follow these steps to set up and run the backend project.
 1. Rename `.env.example` to `.env`:
    ```bash
    cp .env.example .env
-   ```
-2. Update the `.env` file with your database credentials and JWT secret:
-   ```env
-   DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
-   JWT_SECRET="your_jwt_secret"
-   ```
-3. Run Prisma migrations to set up the database:
-   ```bash
-   npx prisma migrate dev --name init
    ```
 
 ### **Step 3: 🏃‍♂️ Running the Project**
